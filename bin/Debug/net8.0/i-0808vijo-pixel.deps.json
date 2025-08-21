@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "i-0808vijo-pixel/1.0.0": {
+        "runtime": {
+          "i-0808vijo-pixel.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "i-0808vijo-pixel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+/workspaces/i-0808vijo-pixel/bin/Debug/net8.0/i-0808vijo-pixel
+/workspaces/i-0808vijo-pixel/bin/Debug/net8.0/i-0808vijo-pixel.deps.json
+/workspaces/i-0808vijo-pixel/bin/Debug/net8.0/i-0808vijo-pixel.runtimeconfig.json
+/workspaces/i-0808vijo-pixel/bin/Debug/net8.0/i-0808vijo-pixel.dll
+/workspaces/i-0808vijo-pixel/bin/Debug/net8.0/i-0808vijo-pixel.pdb
+/workspaces/i-0808vijo-pixel/obj/Debug/net8.0/i-0808vijo-pixel.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/i-0808vijo-pixel/obj/Debug/net8.0/i-0808vijo-pixel.AssemblyInfoInputs.cache
+/workspaces/i-0808vijo-pixel/obj/Debug/net8.0/i-0808vijo-pixel.AssemblyInfo.cs
+/workspaces/i-0808vijo-pixel/obj/Debug/net8.0/i-0808vijo-pixel.csproj.CoreCompileInputs.cache
+/workspaces/i-0808vijo-pixel/obj/Debug/net8.0/i-0808vijo-pixel.sourcelink.json
+/workspaces/i-0808vijo-pixel/obj/Debug/net8.0/i-0808vijo-pixel.dll
+/workspaces/i-0808vijo-pixel/obj/Debug/net8.0/refint/i-0808vijo-pixel.dll
+/workspaces/i-0808vijo-pixel/obj/Debug/net8.0/i-0808vijo-pixel.pdb
+/workspaces/i-0808vijo-pixel/obj/Debug/net8.0/i-0808vijo-pixel.genruntimeconfig.cache
+/workspaces/i-0808vijo-pixel/obj/Debug/net8.0/ref/i-0808vijo-pixel.dll
