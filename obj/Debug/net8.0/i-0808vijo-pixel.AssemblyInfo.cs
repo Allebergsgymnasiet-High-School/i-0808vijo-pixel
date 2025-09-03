@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("i-0808vijo-pixel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+beb33eda989d872eb0926d17687e938d1103be0f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5daafee6bd41ceb0acfb88450c4ff458ab15fa64")]
 [assembly: System.Reflection.AssemblyProductAttribute("i-0808vijo-pixel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("i-0808vijo-pixel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
