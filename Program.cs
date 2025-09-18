@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 Console.WriteLine("======================================");
 Console.WriteLine("=        Frågesport! Advanced        =");
-Console.WriteLine("=       Press any key to Start       =");
+Console.WriteLine("=        Press Enter to Start        =");
 Console.WriteLine("======================================");
 Console.ReadLine();
 
@@ -27,44 +27,102 @@ while (!exit)
     {
         case "start":
             Console.WriteLine("Loading...");
-            break;            
+            break;
 
         case "unlock cheat":
-            Console.WriteLine("Varför vill du låsa upp fusk?\nSpela spelet normalt!");
             break;
 
         case "exit game":
-            Console.WriteLine("Avslutar spelet...");
-            exit = true;
             break;
 
         default:
             Console.WriteLine("Ogiltigt val, försök igen");
             break;
     }
+    if (menu.ToLower() != "start" && menu.ToLower() != "unlock cheat" && menu.ToLower() != "exit game")
+    {
+        Console.WriteLine("Ogiltigt val, försök igen");
+        break;
+    }
+    while (menu.ToLower() != "start" && menu.ToLower() != "exit game")
+    {
+        if (menu.ToLower() == "unlock cheat")
+        {
+            while (true)
+            {
+
+                Console.WriteLine("Varför vill du låsa upp fusk?\nSpela spelet normalt!");
+            
+            int attempts = 2;
+            while (attempts > 0)
+            while (exit == false)
+
+                {
+                    Console.WriteLine("======================================");
+                    Console.WriteLine("=               Start!               =");
+                    Console.WriteLine("=            Unlock Cheat            =");
+                    Console.WriteLine("=             Exit  Game             =");
+                    Console.WriteLine("======================================");
+                    menu = Console.ReadLine();
+                    if (menu.ToLower() != "start" && menu.ToLower() != "unlock cheat" && menu.ToLower() != "exit game")
+                    {
+                        while (false)
+                            Console.WriteLine("Ogiltigt val, försök igen");
+                        attempts--;
+                        if (attempts == 0)
+                        {
+                            Console.WriteLine("Återgår till huvudmenyn");
+                            break;
+                        }
+                    }
+                }
+
+            }
+        }
+        {
+            Console.WriteLine("======================================");
+            Console.WriteLine("=               Start!               =");
+            Console.WriteLine("=            Unlock Cheat            =");
+            Console.WriteLine("=             Exit  Game             =");
+            Console.WriteLine("======================================");
+            menu = Console.ReadLine();
+            if (menu.ToLower() != "start" && menu.ToLower() != "unlock cheat" && menu.ToLower() != "exit game")
+            {
+                while (true)
+                    Console.WriteLine("Ogiltigt val, försök igen");
+                
+            }
+        }
+    }
+
+    if (menu.ToLower() == "exit game")
+    {
+        Console.WriteLine("Avslutar spelet...");
+        exit = true;
+        break;
+    }
+    else
 
     if (menu.ToLower() == "start")
     {
         Console.WriteLine("======================================");
         Console.WriteLine("=         Välkommen till min         =");
-        Console.WriteLine("=            Frågesport!             =");
+        Console.WriteLine("=             Frågesport             =");
         Console.WriteLine("=        Välj ett alternativ:        =");
         Console.WriteLine("=              Historia              =");
         Console.WriteLine("=               Gaming               =");
         Console.WriteLine("======================================");
 
         string amne = "";
-        
+
         while (amne.ToLower() != "historia")
         {
-        if (amne.ToLower() == "gaming")
-            Console.WriteLine("Tyvärr, detta ämne är inte tillgängligt ännu!\nVänligen välj historia istället.");
-        Console.WriteLine("Vänligen välj ett ämne:");
-        amne = Console.ReadLine();
-            break;
-            
-        
-        else if (amne.ToLower() != "historia" && amne.ToLower() != "gaming")
+            if (amne.ToLower() == "gaming")
+                Console.WriteLine("Tyvärr, detta ämne är inte tillgängligt ännu!\nVänligen välj historia istället.");
+            Console.WriteLine("Vänligen välj ett ämne:");
+            amne = Console.ReadLine();
+
+            if (amne.ToLower() != "historia" && amne.ToLower() != "gaming")
             {
                 Console.WriteLine("Ogiltigt val, vänligen välj historia istället.");
                 break;
@@ -72,8 +130,9 @@ while (!exit)
 
 
             }
-
+        }
     }
+
 
     Console.WriteLine("Hej!\nVälkommen till frågesporten om historia!");
 
@@ -83,16 +142,25 @@ while (!exit)
     Console.WriteLine($"Hej {namn}!\nKul att du vill spela min frågesport!\nÄr du redo att börja?");
 
     string svar = Console.ReadLine();
+    if (svar.ToLower() == "ja" || svar.ToLower() == "ja!")
+    {
+        Console.WriteLine("Toppen! Då kör vi igång!");
+    }
+    else
+    {
+        Console.WriteLine("Okej, säg till när du är redo!");
+        Console.ReadLine();
+        Console.WriteLine("Toppen! Då kan vi köra igång!");
+    }
 
-
-    Console.WriteLine("Nu kör vi igång med frågesporten!\nDet kommer vara 20 frågor totalt.\nFör varje rätt svar får du 1 poäng!\nHar du förstått spelreglerna?");
+    Console.WriteLine("Det kommer vara 20 vanliga frågor och en bonus fråga.\nFör varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!\nHar du förstått spelreglerna?");
     string regler = Console.ReadLine();
     int poang = 0;
 
     if (regler.ToLower() == "ja" || regler.ToLower() == "ja!")
         if (regler.ToLower() == "nej" || regler.ToLower() == "nej!")
         {
-            Console.WriteLine("Okej, jag förklarar igen!\nDet kommer vara 20 frågor totalt.\nFör varje rätt svar får du 1 poäng!\nHar du förstått spelreglerna nu?");
+            Console.WriteLine("Okej, jag förklarar igen!\nDet kommer vara 20 vanliga frågor och en bonus fråga.\nFör varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!\nHar du förstått spelreglerna nu?");
         }
     if (regler.ToLower() == "ja" || regler.ToLower() == "ja!")
 
@@ -101,7 +169,7 @@ while (!exit)
     }
     else
     {
-        Console.WriteLine("Okej, jag förklarar igen!\nDet kommer vara 20 frågor totalt.\nFör varje rätt svar får du 1 poäng!\nHar du förstått spelreglerna nu?");
+        Console.WriteLine("Okej, jag förklarar igen!\nDet kommer vara 20 vanliga frågor och en bonus fråga.\nFör varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!\nHar du förstått spelreglerna nu?");
         string regler2 = Console.ReadLine();
         if (regler2.ToLower() == "ja" || regler2.ToLower() == "ja!")
         {
@@ -109,7 +177,7 @@ while (!exit)
         }
         else
         {
-            Console.WriteLine("Okej, jag förklarar en sista gång!\nDet kommer vara 20 frågor totalt.\nFör varje rätt svar får du 1 poäng!\nHoppas du har förstått nu, annars får du fråga någon annan om hjälp.");
+            Console.WriteLine("Okej, jag förklarar en sista gång!\nDet kommer vara 20 vanliga frågor och en bonus fråga.\nFör varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!\nHoppas du har förstått nu, annars får du fråga någon annan om hjälp.");
         }
     }
 
@@ -364,139 +432,78 @@ while (!exit)
             break;
         default:
             Console.WriteLine("Det var inte ett giltigt svar, försök igen");
-            while (inborskrig != "1861" && inborskrig != "1796" && inborskrig != "1882" && inborskrig != "1903")
+            // Loop until a valid answer is given
+            while (true)
             {
                 Console.WriteLine("Välj svaret som stämmer in på följande fråga\nVilket år började den amerikanska inbördeskriget?\nA. 1903\nB. 1882\nC. 1861\nD. 1796");
                 inborskrig = Console.ReadLine();
+                if (inborskrig == "1861")
+                {
+                    Console.WriteLine("Rätt svar!");
+                    poang += 1;
+                    break;
+                }
+                else if (inborskrig == "1796" || inborskrig == "1882" || inborskrig == "1903")
+                {
+                    Console.WriteLine("Fel svar, det var 1861");
+                    poang -= 1;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Det var inte ett giltigt svar, försök igen");
+                }
             }
             break;
-
     }
-
-    Console.WriteLine("fråga 17: Vem var den sista tsaren av Ryssland?");
-    string tsar = Console.ReadLine().ToLower();
-    switch (tsar)
-    {
-        case "nikolaj ii":
-        case "nikolaj":
-        case "nikolai":
-            Console.WriteLine("Rätt svar!");
-
-            poang += 1;
-
-            break;
-        case "alexander iii":
-        case "alexander":
-        case "peter den store":
-        case "peter":
-            Console.WriteLine("Fel svar, det var Nikolaj II");
-            break;
-        default:
-            Console.WriteLine("Fel svar, det var Nikolaj II");
-            poang -= 1;
-            break;
-
-    }
-
-    Console.WriteLine("fråga 18: Vilket år inträffade den ryska revolutionen?");
-    string ryska = Console.ReadLine();
-    if (ryska == "1917")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var 1917");
-        poang -= 1;
-    }
-
-    Console.WriteLine("Välj svaret som stämmer in på följande fråga\nfråga 19: Vem var den första människan på månen?\nA. Buzz Aldrin\nB. Neil Armstrong\nC. Michael Collins\nD. Yuri Gagarin");
-    string manen = Console.ReadLine();
-
-    switch (manen.ToLower())
-    {
-        case "neil armstrong":
-        case "armstrong":
-        case "neil":
-            Console.WriteLine("Rätt svar!");
-
-            poang += 1;
-
-            break;
-        case "buzz aldrin":
-        case "aldrin":
-        case "buzz":
-            Console.WriteLine("Fel svar, det var Neil Armstrong");
-            break;
-        default:
-            Console.WriteLine("Fel svar, det var Neil Armstrong");
-            poang -= 1;
-            break;
-
-    }
-    Console.WriteLine("bonus fråga! Du ska nu få gissa årtiondet för när internet uppfanns!\nOm du gissar rätt får du 5 poäng extra!\nOm du gissar fel förlorar du 3 poäng!\nDu har 5 försök på dig att gissa rätt!\nHar du förstått reglerna?");
-    string internet = Console.ReadLine();
-    if (internet.ToLower() == "ja" || internet.ToLower() == "ja!")
-        if (internet.ToLower() == "nej" || internet.ToLower() == "nej!")
-        {
-            Console.WriteLine("Okej, jag förklarar igen!\nDu ska nu få gissa årtiondet för när internet uppfanns!\nOm du gissar rätt får du 5 poäng extra!\nOm du gissar fel förlorar du 3 poäng!\nDu har 5 försök på dig att gissa rätt!\nHar du förstått reglerna nu?");
-        }
-    if (internet.ToLower() == "ja" || internet.ToLower() == "ja!")
-        if (internet.ToLower() == "nej" || internet.ToLower() == "nej!")
-        {
-            Console.WriteLine("Okej, jag förklarar en sista gång!\nDu ska nu få gissa årtiondet för när internet uppfanns!\nOm du gissar rätt får du 5 poäng extra!\nOm du gissar fel förlorar du 3 poäng!\nDu har 5 försök på dig att gissa rätt!\nHoppas du har förstått nu, annars får du fråga någon annan om hjälp.");
-        }
-    if (internet.ToLower() == "ja" || internet.ToLower() == "ja!")
-    {
-        Console.WriteLine("Toppen! Då kör vi igång!");
-    }
-    int forsok = 0;
-    while (forsok < 5)
-    {
-        Console.WriteLine("Vilket årtionde uppfanns internet?");
-        string internetar = Console.ReadLine();
-        if (internetar.ToLower() == "1960-talet" || internetar.ToLower() == "60-talet" || internetar.ToLower() == "1960talet" || internetar.ToLower() == "60talet")
-        {
-            Console.WriteLine("Rätt svar! Du får 5 poäng extra!");
-
-            poang += 5;
-            break;
-        }
-        else
-        {
-            Console.WriteLine("Fel svar, försök igen!");
-            forsok += 1;
-            if (forsok == 5)
-            {
-                Console.WriteLine("Tyvärr, du har inga fler försök kvar! Det rätta svaret var 1960-talet! Du förlorar 3 poäng!");
-                poang -= 3;
-                break;
-            }
-        }
-    }
-    Console.WriteLine("fråga 20: Vilket årtionde uppfanns hjulet?");
-    string hjulet = Console.ReadLine();
-    if (hjulet.ToLower() == "4000-talet f.kr" || hjulet.ToLower() == "4000 f.kr" || hjulet.ToLower() == "4000-talet före kristus" || hjulet.ToLower() == "4000 före kristus" || hjulet.ToLower() == "4000-talet f.kr." || hjulet.ToLower() == "4000 f.kr." || hjulet.ToLower() == "4000-talet före kristus." || hjulet.ToLower() == "4000 före kristus.")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var 4000-talet f.Kr");
-        poang -= 1;
-    }
-
-    Console.WriteLine($"Du fick totalt {poang} poäng av 20 möjliga!");
-
-
-    Console.WriteLine($"Tack för att du spelade {namn}!\nHoppas du hade kul!");
-
 }
 
+Console.WriteLine("fråga 17: Vad hette projektet som utvecklade atombomben ?");
+string atombomb = Console.ReadLine();
+if (atombomb.ToLower() == "manhattanprojektet" || atombomb.ToLower() == "manhattan projektet" || atombomb.ToLower() == "manhattan")
+{
+    Console.WriteLine("Rätt svar!");
+
+    poang += 1;
+}
+else
+{
+    Console.WriteLine("Fel svar, det var Manhattanprojektet");
+    poang -= 1;
+}
+
+Console.WriteLine("fråga 18: Vilket årtionde inträffade den industriella revolutionen?");
+string industriella = Console.ReadLine();
+
+if (industriella.ToLower() == "1760-talet" || industriella.ToLower() == "1760talet")
+{
+    Console.WriteLine("Rätt svar!");
+
+    poang += 1;
+}
+else
+{
+    Console.WriteLine("Fel svar, det var 1760-talet");
+    poang -= 1;
+}
+
+Console.WriteLine("fråga 19: Vem var den första människan att sätta sin fot på månen?\n A. Buzz Aldrin\nB. Neil Armstrong\nC. Michael Collins\nD. Yuri Gagarin");
+Console.ReadLine();
+
+if (neilarmstrong == "B" || neilarmstrong == "b" || neilarmstrong.ToLower() == "neil armstrong" || neilarmstrong.ToLower() == "armstrong" || neilarmstrong.ToLower() == "neil")
+{
+    Console.WriteLine("Rätt svar!");
+
+    poang += 1;
+}
+else
+{
+    Console.WriteLine("Fel svar, det var Neil Armstrong");
+    poang -= 1;
+}
+
+Console.WriteLine("Bonus fråga: Vilket årtionde skapades internet?\n Du får 5 poäng om du svarar rätt på denna fråga men du förlorar 3 poäng om du svarar fel!");
+string internet = Console.ReadLine();
 
 
 
@@ -504,6 +511,66 @@ while (!exit)
 
 
 
+Console.WriteLine("fråga 20: Vilket år föll berlinmuren?");
+string berlinmur = Console.ReadLine();
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Console.WriteLine("Välkommen!");
+
+// Console.WriteLine("Vad heter du?");
+// string name = Console.ReadLine();
+
+// Console.WriteLine($"Hej ditt namn {name}.\nSkriv ett heltal");
+
+// string inm1 = Console.ReadLine();
+// int tal1 = Convert.ToInt32(inm1);
+// // int tal1 = Convert.ToInt32(inm1);
+
+// Console.WriteLine($"Vad blir {tal1}- 5?");
+
+// int corrAns = tal1 - 5;
+
+// int talSvar = Convert.ToInt32(Console.ReadLine());
+
+// if (talSvar == corrAns)
+// {
+//     Console.WriteLine("Rätt svar!");
+// }
+// else
+// {
+//     Console.WriteLine("Fel svar");
+// }
+
+// Random rand = new Random();
+// int slump = rand.Next(1, 11);
+
+// Console.WriteLine("Jag tänkte på ett tal mellan 1 och 10?");
+
+// int gissning = 0;
+
+// while (gissning != slump)
+// {
+//     gissning = Convert.ToInt32(Console.ReadLine());
+//     if (gissning == slump)
+//     {
+//         Console.WriteLine("Rätt svar!");
+//     }
+//     else
+//     {
+//         Console.WriteLine("Fel svar, gissa igen.");
+//     }
+// }
 
 
 // Console.WriteLine("Välkommen Vincent!\nVänligen skriv in ett heltal");
