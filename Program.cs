@@ -175,7 +175,7 @@ while (!exit)
     {
         Console.WriteLine("Fel svar, det var Boris Jeltsin");
     }
-    
+
 
     Console.WriteLine("Fråga 2: Vad hette Ryssland under andra världskriget?");
     string land = Console.ReadLine();
@@ -298,7 +298,7 @@ while (!exit)
     Console.WriteLine("Bonus fråga: Vilken kung i Sverige införde den så kallade reduktionspolitiken, där adeln fick lämna tillbaka mycket av den mark de tidigare fått i gåvor?\n A. Gustav Vasa\nB. Karl XI\nC. Gustav III\nD. Karl XII");
     string reduktion = Console.ReadLine();
 
-    
+
 
 
 
@@ -516,7 +516,7 @@ while (!exit)
 
     Console.WriteLine("fråga 20: Vilket år föll berlinmuren?");
     string berlinmur = Console.ReadLine();
-        
+
     if (berlinmur == "1989")
     {
         Console.WriteLine("Rätt svar!");
@@ -527,14 +527,53 @@ while (!exit)
     {
         Console.WriteLine("Fel svar, det var 1989");
         poang -= 1;
+    }
 
+    Console.WriteLine($"Grattis {namn}, du har fått {poang} poäng!");
+    if (poang >= 30)
+    {
+        Console.WriteLine("Wow, du är ett riktigt historia proffs!");
+    }
+    else if (poang >= 20 && poang < 30)
+    {
+        Console.WriteLine("Bra jobbat, du har ganska bra koll på historia!");
+    }
+    else if (poang >= 10 && poang < 20)
+    {
+        Console.WriteLine("Inte illa,du har viss koll på historia!");
+    }
+    else if (poang >= 0 && poang < 10)
+    {
+        Console.WriteLine("Du kanske borde läsa lite mer om historia!");
+    }
+    else if (poang < 0)
+    {
+        Console.WriteLine("Oj, du fick minus poäng!\nDu borde verkligen läsa mer om historia!");
+    }
+    Console.WriteLine($"Tack för att du spelade min frågesport {namn}!\nHoppas du hade kul!");
+    Console.WriteLine("Vill du återgå till huvudmenyn?");
+    Console.WriteLine("====================");
+    Console.WriteLine("=        Ja        =");
+    Console.WriteLine("=        Nej       =");
+    Console.WriteLine("====================");
+
+    string huvudmeny = Console.ReadLine();
+    if (huvudmeny.ToLower() == "ja" || huvudmeny.ToLower() == "ja!")
+    {
+        Console.WriteLine("Återgår till huvudmenyn...");
+        Thread.Sleep(6000);
+        continue;
+    }
+    else
+    {
+        Console.WriteLine("Avslutar spelet...");
+        exit = true;
+        break;
     }
 
 
-
-
-
-
+}
+        
 
 
 
