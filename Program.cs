@@ -1,7 +1,4 @@
-﻿using System.Diagnostics;
-using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
-using System.Threading;
+﻿using System.Threading;
 Console.WriteLine("======================================");
 Console.WriteLine("=        Frågesport! Advanced        =");
 Console.WriteLine("=        Press Enter to Start        =");
@@ -30,549 +27,593 @@ while (!exit)
 
         case "start":
             Console.WriteLine("Loading...");
+            Thread.Sleep(3000);
+            
+                while (true)
+                {
+                    Console.WriteLine("======================================");
+                    Console.WriteLine("=         Välkommen till min         =");
+                    Console.WriteLine("=             Frågesport             =");
+                    Console.WriteLine("=        Välj ett alternativ:        =");
+                    Console.WriteLine("=              Historia              =");
+                    Console.WriteLine("=               Gaming               =");
+                    Console.WriteLine("======================================");
+
+                    string amne = Console.ReadLine();
+                    if (amne.ToLower() == "historia")
+                    {
+                        break;
+                    }
+                    else if (amne.ToLower() == "gaming")
+                    {
+                        Console.WriteLine("Tyvärr, detta ämne är inte tillgängligt ännu!");
+                        Thread.Sleep(2500);
+                        Console.WriteLine("Vänligen välj historia istället.");
+                        Thread.Sleep(2500);
+                        continue;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ogiltigt val, vänligen välj historia istället.");
+                        Thread.Sleep(4000);
+                        continue;
+                    }
+                }
+            
+
+            Console.WriteLine("Hej!");
+            Thread.Sleep(1000);
+            Console.WriteLine("Välkommen till frågesporten om historia!");
+            Thread.Sleep(2000);
+
+            Console.WriteLine("Först och främst...");
+            Thread.Sleep(2000);
+            Console.WriteLine("Vad heter du?");
+
+            string namn = Console.ReadLine();
+            Console.WriteLine($"Hej {namn}!");
+            Thread.Sleep(2000);
+            Console.WriteLine("Kul att du vill spela min frågesport!");
+            Thread.Sleep(2000);
+            Console.WriteLine("Är du redo att börja?");
+
+            string svar = Console.ReadLine();
+            if (svar.ToLower() == "ja" || svar.ToLower() == "ja!")
+            {
+                Console.WriteLine("Toppen! Då kör vi igång!");
+                Thread.Sleep(2000);
+            }
+            else
+            {
+                Console.WriteLine("Okej, säg till när du är redo!");
+                Console.ReadLine();
+                Console.WriteLine("Toppen! Då kan vi köra igång!");
+                Thread.Sleep(2000);
+            }
+
+            Console.WriteLine("Du kommer att få svara på 40 frågor om ämnet historia.");
+            Thread.Sleep(3000);
+            Console.WriteLine("För varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!");
+            Thread.Sleep(4000);
+            Console.WriteLine("Har du förstått spelreglerna?");
+            string regler = Console.ReadLine();
+            int poang = 0;
+
+            if (regler.ToLower() == "ja" || regler.ToLower() == "ja!")
+                if (regler.ToLower() == "nej" || regler.ToLower() == "nej!")
+                {
+                    Console.WriteLine("Okej, jag förklarar igen!");
+                    Thread.Sleep(2000);
+                    Console.WriteLine("Du kommer att få svara på 40 frågor om ämnet historia.");
+                    Thread.Sleep(3000);
+                    Console.WriteLine("För varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("Har du förstått spelreglerna nu?");
+                }
+            if (regler.ToLower() == "ja" || regler.ToLower() == "ja!")
+
+            {
+                Console.WriteLine("Toppen! Då kör vi igång!");
+            }
+            else
+            {
+                Console.WriteLine("Okej, jag förklarar igen!");
+                Thread.Sleep(2000);
+                Console.WriteLine("Du kommer att få svara på 40 frågor om ämnet historia.");
+                Thread.Sleep(3000);
+                Console.WriteLine("För varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!");
+                Thread.Sleep(4000);
+                Console.WriteLine("Har du förstått spelreglerna nu?");
+                string regler2 = Console.ReadLine();
+                if (regler2.ToLower() == "ja" || regler2.ToLower() == "ja!")
+                {
+                    Console.WriteLine("Toppen! Då kör vi igång!");
+                }
+                else
+                {
+                    Console.WriteLine("Okej, jag förklarar en sista gång!");
+                    Thread.Sleep(2000);
+                    Console.WriteLine("Du kommer att få svara på 40 frågor om ämnet historia.");
+                    Thread.Sleep(3000);
+                    Console.WriteLine("För varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("Hoppas du har förstått nu, annars får du fråga någon annan om hjälp.");
+                }
+            }
+
+            Thread.Sleep(8000);
+            Console.WriteLine("Jag kommer vara snäll med att inte ge dig minus poäng på den första frågan ifall du svarar fel!\nLycka till!");
+
+
+            Console.WriteLine("Fråga 1: Rysslands första president var Vladimir Putin?");
+            Thread.Sleep(2000);
+            Console.WriteLine("Sant eller Falskt?");
+            string president = Console.ReadLine();
+
+            if (president.ToLower() == "falskt" || president.ToLower() == "falsk " || president.ToLower() == "false")
+            {
+                Console.WriteLine("Rätt svar! Rysslands första president var Boris Jeltsin");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Boris Jeltsin");
+            }
+
+
+            Console.WriteLine("Fråga 2: Vad hette Ryssland under andra världskriget?");
+            string land = Console.ReadLine();
+            if (land.ToLower() == "sovjetunionen" || land.ToLower() == "sovjet")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det hette Sovjetunionen");
+                poang -= 1;
+            }
+
+            Console.WriteLine("Fråga 3: Vilket årtionde inträffade andra världskriget?");
+            string artionde = Console.ReadLine();
+            if (artionde == "1940-talet" || artionde == "40-talet" || artionde == "1940talet" || artionde == "40talet")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var 1940-talet");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 4: Vem var tysklands rikskansler mellan år 1930 och 1932?");
+            string kansler = Console.ReadLine();
+            if (kansler.ToLower() == "heinrich brüning" || kansler.ToLower() == "brüning" || kansler.ToLower() == "heinrich")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Heinrich Brüning");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 5: Vilket av de följande länderna var med de allierade under första världskriget?\nA. Tyskland\nB. Österrike-Ungern\nC. Italien\nD. Osmanska riket");
+            string allierade = Console.ReadLine();
+            if (allierade.ToLower() == "c" || allierade.ToLower() == "italien")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Italien");
+                poang -= 1;
+
+
+            }
+
+            Console.WriteLine("fråga 6: Vilket år började första världskriget?");
+            string ar1vk = Console.ReadLine();
+
+            if (ar1vk == "1914")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var 1914");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 7: Vilket år slutade första världskriget?");
+            string ar1vkslut = Console.ReadLine();
+
+            if (ar1vkslut == "1918")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var 1918");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 8: Vilket land skapade den första fungerande stridsvagnen?");
+            string stridsvagn = Console.ReadLine();
+
+            if (stridsvagn.ToLower() == "storbritannien" || stridsvagn.ToLower() == "england" || stridsvagn.ToLower() == "uk")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Storbritannien");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 9: Vilket land var först med att införa allmän rösträtt?");
+            string rostratt = Console.ReadLine();
+
+            if (rostratt.ToLower() == "nya zeeland" || rostratt.ToLower() == "new zealand")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Nya Zeeland");
+                poang -= 1;
+            }
+            Console.WriteLine("Bonus fråga: Vilken kung i Sverige införde den så kallade reduktionspolitiken,");
+            Thread.Sleep(6000);
+            Console.WriteLine("där adeln fick lämna tillbaka mycket av den mark de tidigare fått i gåvor?");
+            Thread.Sleep(6000);
+            Console.WriteLine("Du får 5 poäng om du svarar rätt på denna fråga men du kommer att förlora 3 poäng om du svarar fel!");
+            Thread.Sleep(6000);
+            Console.WriteLine("A. Gustav Vasa\nB. Karl XI\nC. Gustav III\nD. Karl XII");
+            string reduktion = Console.ReadLine();
+
+            if (reduktion.ToLower() == "b" || reduktion.ToLower() == "karl xi" || reduktion.ToLower() == "karl 11" || reduktion.ToLower() == "karl den elfte")
+            {
+                Console.WriteLine("Rätt svar!");
+                poang += 5;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Karl XI");
+                poang -= 3;
+            }
+
+            Console.WriteLine("fråga 10: Vilket land förlorade ett väpnat krig mot fåglar?");
+            string krig = Console.ReadLine();
+
+            if (krig.ToLower() == "australien" || krig.ToLower() == "australia")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Australien");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 11: Vem var den första kejsaren av det tysk-romerska riket?");
+            string kejsare = Console.ReadLine();
+
+            if (kejsare.ToLower() == "otto den store" || kejsare.ToLower() == "otto" || kejsare.ToLower() == "otto 1")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Otto den store");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 12: Vilket samvälde försvann från kartan mellan 1772 och 1795 som sedan återvände år 1918?");
+            string samvalde = Console.ReadLine();
+
+            if (samvalde.ToLower() == "polen" || samvalde.ToLower() == "polska samväldet")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Polen");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 13: Vilket land var först med att använda gevär?");
+            string gevär = Console.ReadLine();
+
+            if (gevär.ToLower() == "kina" || gevär.ToLower() == "kineserna")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Kina");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 14: Vilket århundrade inträffade den franska revolutionen?");
+            string arhundrade = Console.ReadLine();
+
+            if (arhundrade.ToLower() == "1700-talet" || arhundrade.ToLower() == "18-talet" || arhundrade.ToLower() == "1700talet" || arhundrade.ToLower() == "18talet")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var 1700-talet");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 15: Vem var den första presidenten i USA?");
+            string presidentusa = Console.ReadLine();
+
+            if (presidentusa.ToLower() == "george washington" || presidentusa.ToLower() == "washington" || presidentusa.ToLower() == "george")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var George Washington");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 16: Välj svaret som stämmer in på följande fråga\nVilket år började den amerikanska inbördeskriget?\nA. 1903\nB. 1882\nC. 1861\nD. 1796");
+            string inborskrig = Console.ReadLine();
+
+            switch (inborskrig)
+            {
+                case "1861":
+                    Console.WriteLine("Rätt svar!");
+
+                    poang += 1;
+
+                    break;
+
+                case "1796":
+                case "1882":
+                case "1903":
+                    Console.WriteLine("Fel svar, det var 1861");
+                    poang -= 1;
+                    break;
+
+                default:
+                    Console.WriteLine("Det var inte ett giltigt svar, försök igen");
+
+                    while (true)
+                    {
+                        Console.WriteLine("Välj svaret som stämmer in på följande fråga\nVilket år började den amerikanska inbördeskriget?\nA. 1903\nB. 1882\nC. 1861\nD. 1796");
+                        inborskrig = Console.ReadLine();
+                        if (inborskrig == "1861")
+                        {
+                            Console.WriteLine("Rätt svar!");
+                            poang += 1;
+                            break;
+                        }
+                        else if (inborskrig == "1796" || inborskrig == "1882" || inborskrig == "1903")
+                        {
+                            Console.WriteLine("Fel svar, det var 1861");
+                            poang -= 1;
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Det var inte ett giltigt svar, försök igen");
+                        }
+                    }
+                    break;
+            }
+
+
+            Console.WriteLine("fråga 17: Vad hette projektet som utvecklade atombomben ?");
+            string atombomb = Console.ReadLine();
+            if (atombomb.ToLower() == "manhattanprojektet" || atombomb.ToLower() == "manhattan projektet" || atombomb.ToLower() == "manhattan")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Manhattanprojektet");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 18: Vilket årtionde inträffade den industriella revolutionen?");
+            string industriella = Console.ReadLine();
+
+            if (industriella.ToLower() == "1760-talet" || industriella.ToLower() == "1760talet")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var 1760-talet");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 19: Vem var den första människan att sätta sin fot på månen?\n A. Buzz Aldrin\nB. Neil Armstrong\nC. Michael Collins\nD. Yuri Gagarin");
+            string neilarmstrong = Console.ReadLine();
+
+            if (neilarmstrong == "B" || neilarmstrong == "b" || neilarmstrong.ToLower() == "neil armstrong" || neilarmstrong.ToLower() == "armstrong" || neilarmstrong.ToLower() == "neil")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Neil Armstrong");
+                poang -= 1;
+            }
+
+            int forsok = 0;
+            while (forsok < 10)
+            {
+
+                Console.WriteLine("Bonus fråga: Vilket årtal skapades internet?\n Du får 5 poäng om du svarar rätt på denna fråga men du förlorar 3 poäng om du svarar fel!");
+                string internet = Console.ReadLine();
+                int internetTal;
+                if (!int.TryParse(internet, out internetTal))
+                {
+                    Console.WriteLine("Ogiltigt svar, vänligen ange ett årtal i siffror.");
+                    continue;
+                }
+                forsok++;
+
+                if (internetTal == 1969)
+                {
+                    Console.WriteLine("Rätt svar!");
+                    poang += 5;
+                    break;
+                }
+                else if (internetTal > 1969 && internetTal < 1980)
+                {
+                    Console.WriteLine("Lite för högt, men nära skjuter ingen hare!\nFörsök igen!");
+                }
+                else if (internetTal < 1969 && internetTal > 1900)
+                {
+                    Console.WriteLine("Lite för lågt, skjut lite högre!\nFörsök igen!");
+                }
+                else if (internetTal >= 1980 || internetTal <= 1900)
+                {
+                    Console.WriteLine("Oj, det där var väldigt långt ifrån!\nFörsök igen!");
+                }
+                else
+                {
+                    Console.WriteLine("Fel svar, det var 1960-talet");
+                    poang -= 3;
+                }
+            }
+
+            Console.WriteLine("fråga 20: Vilket år föll berlinmuren?");
+            string berlinmur = Console.ReadLine();
+
+            if (berlinmur == "1989")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var 1989");
+                poang -= 1;
+            }
+
+            Console.WriteLine($"Grattis {namn}, du har fått {poang} poäng!");
+            if (poang >= 30)
+            {
+                Console.WriteLine("Wow, du är ett riktigt historia proffs!");
+            }
+            else if (poang >= 20 && poang < 30)
+            {
+                Console.WriteLine("Bra jobbat, du har ganska bra koll på historia!");
+            }
+            else if (poang >= 10 && poang < 20)
+            {
+                Console.WriteLine("Inte illa, du har viss koll på historia!");
+            }
+            else if (poang >= 0 && poang < 10)
+            {
+                Console.WriteLine("Du kanske borde läsa lite mer om historia!");
+            }
+            else if (poang < 0)
+            {
+                Console.WriteLine("Oj, du fick minus poäng!\nDu borde verkligen läsa mer om historia!");
+            }
+
+            bool exitgame = false;
+            while (!exitgame)
+            {
+                Console.WriteLine($"Tack för att du spelade min frågesport {namn}!\nHoppas du hade kul!");
+                Console.WriteLine("Vill du återgå till huvudmenyn?");
+                Thread.Sleep(3000);
+
+                Console.WriteLine("===============================");
+                Console.WriteLine("=             Ja              =");
+                Console.WriteLine("=             Nej             =");
+                Console.WriteLine("===============================");
+
+                string huvudmeny = Console.ReadLine();
+                if (huvudmeny.ToLower() == "ja" || huvudmeny.ToLower() == "ja!")
+                {
+                    Console.WriteLine("Återgår till huvudmenyn...");
+                    Thread.Sleep(6000);
+                    continue;
+                }
+                else if (huvudmeny.ToLower() == "nej" || huvudmeny.ToLower() == "nej!")
+                {
+                    Console.WriteLine("Avslutar spelet...");
+                    exit = true;
+                    exitgame = true;
+
+                }
+                else
+                {
+                    Console.WriteLine("Ogiltigt val, vänligen välj ett av alternativen");
+                    Thread.Sleep(3000);
+                }
+            }
             break;
 
         case "unlock cheat":
-            break;
+            Console.WriteLine("Varför vill du låsa upp fusk?");
+            Thread.Sleep(2500);
+            Console.WriteLine("Spela spelet normalt istället!");
+            Thread.Sleep(2500);
+            Console.WriteLine("Återgår till huvudmenyn...");
+            Thread.Sleep(3500);
+            continue;
 
         case "exit game":
+        case "exit":
+            Console.WriteLine("Avslutar spelet...");
+            exit = true;
             break;
 
         default:
             Console.WriteLine("Ogiltigt val, försök igen");
+            Thread.Sleep(3000);
             continue;
-            break;
-    }
-    if (menu.ToLower() != "start" && menu.ToLower() != "unlock cheat" && menu.ToLower() != "exit game")
-    {
-        Console.WriteLine("Ogiltigt val, försök igen");
-        continue;
-    }
-    if (menu.ToLower() != "start" && menu.ToLower() != "exit game")
-    {
-        if (menu.ToLower() == "unlock cheat")
-        {
-
-
-            Console.WriteLine("Varför vill du låsa upp fusk?\nSpela spelet normalt!");
-
-            Console.WriteLine(" ");
-            Console.ReadLine();
-
-            Console.WriteLine("Återgår till huvudmenyn...");
-
-
-
-            continue;
-
-
-
-        }
-
-
-
-
-        if (menu.ToLower() == "exit game" || menu.ToLower() == "exit")
-        {
-            Console.WriteLine("Avslutar spelet...");
-            exit = true;
-            break;
-        }
-    }
-
-    if (menu.ToLower() == "start")
-    {
-        Console.WriteLine("======================================");
-        Console.WriteLine("=         Välkommen till min         =");
-        Console.WriteLine("=             Frågesport             =");
-        Console.WriteLine("=        Välj ett alternativ:        =");
-        Console.WriteLine("=              Historia              =");
-        Console.WriteLine("=               Gaming               =");
-        Console.WriteLine("======================================");
-
-        string amne = Console.ReadLine();
-
-        while (amne.ToLower() != "historia")
-        {
-            if (amne.ToLower() == "gaming")
-                Console.WriteLine("Tyvärr, detta ämne är inte tillgängligt ännu!\nVänligen välj historia istället.");
-            Console.WriteLine("Vänligen välj ett ämne:");
-            amne = Console.ReadLine();
-
-            if (amne.ToLower() != "historia" && amne.ToLower() != "gaming")
-            {
-                Console.WriteLine("Ogiltigt val, vänligen välj historia istället.");
-                break;
-
-
-
-            }
-        }
-    }
-
-
-    Console.WriteLine("Hej!\nVälkommen till frågesporten om historia!");
-
-    Console.WriteLine("Först och främst!\nVad heter du?");
-
-    string namn = Console.ReadLine();
-    Console.WriteLine($"Hej {namn}!\nKul att du vill spela min frågesport!\nÄr du redo att börja?");
-
-    string svar = Console.ReadLine();
-    if (svar.ToLower() == "ja" || svar.ToLower() == "ja!")
-    {
-        Console.WriteLine("Toppen! Då kör vi igång!");
-    }
-    else
-    {
-        Console.WriteLine("Okej, säg till när du är redo!");
-        Console.ReadLine();
-        Console.WriteLine("Toppen! Då kan vi köra igång!");
-    }
-
-    Console.WriteLine("Du kommer att få svara på 40 frågor om ämnet historia.\nFör varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!\nHar du förstått spelreglerna?");
-    string regler = Console.ReadLine();
-    int poang = 0;
-
-    if (regler.ToLower() == "ja" || regler.ToLower() == "ja!")
-        if (regler.ToLower() == "nej" || regler.ToLower() == "nej!")
-        {
-            Console.WriteLine("Okej, jag förklarar igen!\nDu kommer att få svara på 40 frågor om ämnet historia.\nFör varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!\nHar du förstått spelreglerna nu?");
-        }
-    if (regler.ToLower() == "ja" || regler.ToLower() == "ja!")
-
-    {
-        Console.WriteLine("Toppen! Då kör vi igång!");
-    }
-    else
-    {
-        Console.WriteLine("Okej, jag förklarar igen!\nDu kommer att få svara på 40 frågor om ämnet historia.\nFör varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!\nHar du förstått spelreglerna nu?");
-        string regler2 = Console.ReadLine();
-        if (regler2.ToLower() == "ja" || regler2.ToLower() == "ja!")
-        {
-            Console.WriteLine("Toppen! Då kör vi igång!");
-        }
-        else
-        {
-            Console.WriteLine("Okej, jag förklarar en sista gång!\nDu kommer att få svara på 40 frågor om ämnet historia.\nFör varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!\nHoppas du har förstått nu, annars får du fråga någon annan om hjälp.");
-        }
-    }
-
-    Thread.Sleep(6000);
-    Console.WriteLine("Jag kommer vara snäll med att inte ge dig minus poäng på den första frågan ifall du svarar fel!\nLycka till!");
-
-
-    Console.WriteLine("Fråga 1: Rysslands första president var Vladimir Putin?\n Sant eller Falskt?");
-    string president = Console.ReadLine();
-
-    if (president.ToLower() == "falskt" || president.ToLower() == "falsk")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var Boris Jeltsin");
-    }
-
-
-    Console.WriteLine("Fråga 2: Vad hette Ryssland under andra världskriget?");
-    string land = Console.ReadLine();
-    if (land.ToLower() == "sovjetunionen" || land.ToLower() == "sovjet")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det hette Sovjetunionen");
-        poang -= 1;
-    }
-
-    Console.WriteLine("Fråga 3: Vilket årtionde inträffade andra världskriget?");
-    string artionde = Console.ReadLine();
-    if (artionde == "1940-talet" || artionde == "40-talet" || artionde == "1940talet" || artionde == "40talet")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var 1940-talet");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 4: Vem var tysklands rikskansler mellan år 1930 och 1932?");
-    string kansler = Console.ReadLine();
-    if (kansler.ToLower() == "heinrich brüning" || kansler.ToLower() == "brüning" || kansler.ToLower() == "heinrich")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var Heinrich Brüning");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 5: Vilket av de följande länderna var med de allierade under första världskriget?\nA. Tyskland\nB. Österrike-Ungern\nC. Italien\nD. Osmanska riket");
-    string allierade = Console.ReadLine();
-    if (allierade.ToLower() == "c" || allierade.ToLower() == "italien")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var Italien");
-        poang -= 1;
-
-
-    }
-
-    Console.WriteLine("fråga 6: Vilket år började första världskriget?");
-    string ar1vk = Console.ReadLine();
-
-    if (ar1vk == "1914")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var 1914");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 7: Vilket år slutade första världskriget?");
-    string ar1vkslut = Console.ReadLine();
-
-    if (ar1vkslut == "1918")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var 1918");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 8: Vilket land skapade den första fungerande stridsvagnen?");
-    string stridsvagn = Console.ReadLine();
-
-    if (stridsvagn.ToLower() == "storbritannien" || stridsvagn.ToLower() == "england" || stridsvagn.ToLower() == "uk")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var Storbritannien");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 9: Vilket land var först med att införa allmän rösträtt?");
-    string rostratt = Console.ReadLine();
-
-    if (rostratt.ToLower() == "nya zeeland" || rostratt.ToLower() == "new zealand")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var Nya Zeeland");
-        poang -= 1;
-    }
-
-    Console.WriteLine("Bonus fråga: Vilken kung i Sverige införde den så kallade reduktionspolitiken, där adeln fick lämna tillbaka mycket av den mark de tidigare fått i gåvor?\n A. Gustav Vasa\nB. Karl XI\nC. Gustav III\nD. Karl XII");
-    string reduktion = Console.ReadLine();
-
-
-
-
-
-    Console.WriteLine("fråga 10: Vilket land förlorade ett väpnat krig mot fåglar?");
-    string krig = Console.ReadLine();
-
-    if (krig.ToLower() == "australien" || krig.ToLower() == "australia")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var Australien");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 11: Vem var den första kejsaren av det tysk-romerska riket?");
-    string kejsare = Console.ReadLine();
-
-    if (kejsare.ToLower() == "otto den store" || kejsare.ToLower() == "otto" || kejsare.ToLower() == "otto 1")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var Otto den store");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 12: Vilket samvälde försvann från kartan mellan 1772 och 1795 som sedan återvände år 1918?");
-    string samvalde = Console.ReadLine();
-
-    if (samvalde.ToLower() == "polen" || samvalde.ToLower() == "polska samväldet")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var Polen");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 13: Vilket land var först med att använda gevär?");
-    string gevär = Console.ReadLine();
-
-    if (gevär.ToLower() == "kina" || gevär.ToLower() == "kineserna")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var Kina");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 14: Vilket århundrade inträffade den franska revolutionen?");
-    string arhundrade = Console.ReadLine();
-
-    if (arhundrade.ToLower() == "1700-talet" || arhundrade.ToLower() == "18-talet" || arhundrade.ToLower() == "1700talet" || arhundrade.ToLower() == "18talet")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var 1700-talet");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 15: Vem var den första presidenten i USA?");
-    string presidentusa = Console.ReadLine();
-
-    if (presidentusa.ToLower() == "george washington" || presidentusa.ToLower() == "washington" || presidentusa.ToLower() == "george")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var George Washington");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 16: Välj svaret som stämmer in på följande fråga\nVilket år började den amerikanska inbördeskriget?\nA. 1903\nB. 1882\nC. 1861\nD. 1796");
-    string inborskrig = Console.ReadLine();
-
-    switch (inborskrig)
-    {
-        case "1861":
-            Console.WriteLine("Rätt svar!");
-
-            poang += 1;
-
-            break;
-        case "1796":
-        case "1882":
-        case "1903":
-            Console.WriteLine("Fel svar, det var 1861");
-            poang -= 1;
-            break;
-        default:
-            Console.WriteLine("Det var inte ett giltigt svar, försök igen");
-
-            while (true)
-            {
-                Console.WriteLine("Välj svaret som stämmer in på följande fråga\nVilket år började den amerikanska inbördeskriget?\nA. 1903\nB. 1882\nC. 1861\nD. 1796");
-                inborskrig = Console.ReadLine();
-                if (inborskrig == "1861")
-                {
-                    Console.WriteLine("Rätt svar!");
-                    poang += 1;
-                    break;
-                }
-                else if (inborskrig == "1796" || inborskrig == "1882" || inborskrig == "1903")
-                {
-                    Console.WriteLine("Fel svar, det var 1861");
-                    poang -= 1;
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Det var inte ett giltigt svar, försök igen");
-                }
-            }
-            break;
-    }
-
-
-    Console.WriteLine("fråga 17: Vad hette projektet som utvecklade atombomben ?");
-    string atombomb = Console.ReadLine();
-    if (atombomb.ToLower() == "manhattanprojektet" || atombomb.ToLower() == "manhattan projektet" || atombomb.ToLower() == "manhattan")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var Manhattanprojektet");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 18: Vilket årtionde inträffade den industriella revolutionen?");
-    string industriella = Console.ReadLine();
-
-    if (industriella.ToLower() == "1760-talet" || industriella.ToLower() == "1760talet")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var 1760-talet");
-        poang -= 1;
-    }
-
-    Console.WriteLine("fråga 19: Vem var den första människan att sätta sin fot på månen?\n A. Buzz Aldrin\nB. Neil Armstrong\nC. Michael Collins\nD. Yuri Gagarin");
-    string neilarmstrong = Console.ReadLine();
-
-    if (neilarmstrong == "B" || neilarmstrong == "b" || neilarmstrong.ToLower() == "neil armstrong" || neilarmstrong.ToLower() == "armstrong" || neilarmstrong.ToLower() == "neil")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var Neil Armstrong");
-        poang -= 1;
-    }
-
-    for (int forsok = 0; forsok < 10; forsok++)
-    {
-
-
-
-        Console.WriteLine("Bonus fråga: Vilket årtal skapades internet?\n Du får 5 poäng om du svarar rätt på denna fråga men du förlorar 3 poäng om du svarar fel!");
-        string internet = Console.ReadLine();
-        int internetTal = Convert.ToInt32(internet);
-        if (internetTal == 1969)
-        {
-            Console.WriteLine("Rätt svar!");
-            break;
-            poang += 5;
-        }
-        else if (internetTal > 1969 && internetTal < 1980)
-        {
-            Console.WriteLine("Lite för högt, men nära skjuter ingen hare!\nFörsök igen!");
-        }
-        else if (internetTal < 1969 && internetTal > 1900)
-        {
-            Console.WriteLine("Lite för lågt, skjut lite högre!\nFörsök igen!");
-        }
-        else if (internetTal >= 1980 || internetTal <= 1900)
-        {
-            Console.WriteLine("Oj, det där var väldigt långt ifrån!\nFörsök igen!");
-        }
-        else
-        {
-            Console.WriteLine("Fel svar, det var 1960-talet");
-            poang -= 3;
-        }
-    }
-
-    Console.WriteLine("fråga 20: Vilket år föll berlinmuren?");
-    string berlinmur = Console.ReadLine();
-
-    if (berlinmur == "1989")
-    {
-        Console.WriteLine("Rätt svar!");
-
-        poang += 1;
-    }
-    else
-    {
-        Console.WriteLine("Fel svar, det var 1989");
-        poang -= 1;
-    }
-
-    Console.WriteLine($"Grattis {namn}, du har fått {poang} poäng!");
-    if (poang >= 30)
-    {
-        Console.WriteLine("Wow, du är ett riktigt historia proffs!");
-    }
-    else if (poang >= 20 && poang < 30)
-    {
-        Console.WriteLine("Bra jobbat, du har ganska bra koll på historia!");
-    }
-    else if (poang >= 10 && poang < 20)
-    {
-        Console.WriteLine("Inte illa,du har viss koll på historia!");
-    }
-    else if (poang >= 0 && poang < 10)
-    {
-        Console.WriteLine("Du kanske borde läsa lite mer om historia!");
-    }
-    else if (poang < 0)
-    {
-        Console.WriteLine("Oj, du fick minus poäng!\nDu borde verkligen läsa mer om historia!");
-    }
-    Console.WriteLine($"Tack för att du spelade min frågesport {namn}!\nHoppas du hade kul!");
-    Console.WriteLine("Vill du återgå till huvudmenyn?");
-    Console.WriteLine("====================");
-    Console.WriteLine("=        Ja        =");
-    Console.WriteLine("=        Nej       =");
-    Console.WriteLine("====================");
-
-    string huvudmeny = Console.ReadLine();
-    if (huvudmeny.ToLower() == "ja" || huvudmeny.ToLower() == "ja!")
-    {
-        Console.WriteLine("Återgår till huvudmenyn...");
-        Thread.Sleep(6000);
-        continue;
-    }
-    else
-    {
-        Console.WriteLine("Avslutar spelet...");
-        exit = true;
-        break;
-    }
-
-
+    }        
 }
+
+
+
         
 
 
