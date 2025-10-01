@@ -28,38 +28,39 @@ while (!exit)
         case "start":
             Console.WriteLine("Loading...");
             Thread.Sleep(3000);
-            
-                while (true)
-                {
-                    Console.WriteLine("======================================");
-                    Console.WriteLine("=         Välkommen till min         =");
-                    Console.WriteLine("=             Frågesport             =");
-                    Console.WriteLine("=        Välj ett alternativ:        =");
-                    Console.WriteLine("=              Historia              =");
-                    Console.WriteLine("=               Gaming               =");
-                    Console.WriteLine("======================================");
+            int hintsLeft = 5;
 
-                    string amne = Console.ReadLine();
-                    if (amne.ToLower() == "historia")
-                    {
-                        break;
-                    }
-                    else if (amne.ToLower() == "gaming")
-                    {
-                        Console.WriteLine("Tyvärr, detta ämne är inte tillgängligt ännu!");
-                        Thread.Sleep(2500);
-                        Console.WriteLine("Vänligen välj historia istället.");
-                        Thread.Sleep(2500);
-                        continue;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Ogiltigt val, vänligen välj historia istället.");
-                        Thread.Sleep(4000);
-                        continue;
-                    }
+                while (true)
+            {
+                Console.WriteLine("======================================");
+                Console.WriteLine("=         Välkommen till min         =");
+                Console.WriteLine("=             Frågesport             =");
+                Console.WriteLine("=        Välj ett alternativ:        =");
+                Console.WriteLine("=              Historia              =");
+                Console.WriteLine("=               Gaming               =");
+                Console.WriteLine("======================================");
+
+                string amne = Console.ReadLine();
+                if (amne.ToLower() == "historia")
+                {
+                    break;
                 }
-            
+                else if (amne.ToLower() == "gaming")
+                {
+                    Console.WriteLine("Tyvärr, detta ämne är inte tillgängligt ännu!");
+                    Thread.Sleep(2500);
+                    Console.WriteLine("Vänligen välj historia istället.");
+                    Thread.Sleep(2500);
+                    continue;
+                }
+                else
+                {
+                    Console.WriteLine("Ogiltigt val, vänligen välj historia istället.");
+                    Thread.Sleep(4000);
+                    continue;
+                }
+            }
+
 
             Console.WriteLine("Hej!");
             Thread.Sleep(1000);
@@ -178,7 +179,7 @@ while (!exit)
 
             Console.WriteLine("Fråga 3: Vilket årtionde inträffade andra världskriget?");
             string artionde = Console.ReadLine();
-            if (artionde == "1940-talet" || artionde == "40-talet" || artionde == "1940talet" || artionde == "40talet")
+            if (artionde == "1940-talet" || artionde == "40-talet" || artionde == "1940talet" || artionde == "40talet" || artionde.ToLower() == "sent 1930-tal" || artionde.ToLower() == "1930-talet" || artionde.ToLower() == "1930 talet")
             {
                 Console.WriteLine("Rätt svar!");
 
@@ -191,6 +192,16 @@ while (!exit)
             }
 
             Console.WriteLine("fråga 4: Vem var tysklands rikskansler mellan år 1930 och 1932?");
+            if (hintsLeft > 0)
+            {
+                Console.WriteLine($"Du har {hintsLeft} ledtrådar kvar. Vill du använda en? (ja/nej)");
+                string useHint = Console.ReadLine();
+                if (useHint.ToLower() == "ja" || useHint.ToLower() == "ja!")
+                {
+                    Console.WriteLine("Ledtråd: Han var medlem i Centrumpartiet och tjänstgjorde som rikskansler under Weimarrepubliken.");
+                    hintsLeft--;
+                }
+            }
             string kansler = Console.ReadLine();
             if (kansler.ToLower() == "heinrich brüning" || kansler.ToLower() == "brüning" || kansler.ToLower() == "heinrich")
             {
@@ -205,6 +216,16 @@ while (!exit)
             }
 
             Console.WriteLine("fråga 5: Vilket av de följande länderna var med de allierade under första världskriget?\nA. Tyskland\nB. Österrike-Ungern\nC. Italien\nD. Osmanska riket");
+            if (hintsLeft > 0)
+            {
+                Console.WriteLine($"Du har {hintsLeft} ledtrådar kvar. Vill du använda en? (ja/nej)");
+                string useHint = Console.ReadLine();
+                if (useHint.ToLower() == "ja" || useHint.ToLower() == "ja!")
+                {
+                    Console.WriteLine("Ledtråd: Detta land är känt för sin rika kultur, konst och mat.");
+                    hintsLeft--;
+                }
+            }
             string allierade = Console.ReadLine();
             if (allierade.ToLower() == "c" || allierade.ToLower() == "italien")
             {
@@ -534,8 +555,39 @@ while (!exit)
                 poang -= 1;
             }
 
+            Console.WriteLine("fråga 21: Vem var den första kvinnliga premiärministern i Storbritannien?");
+            Thread.Sleep(5000);
+            Console.WriteLine("A. Theresa May\nB. Margaret Thatcher\nC. Elizabeth II\nD. Angela Merkel");
+            string premiarministern = Console.ReadLine();
+            if (premiarministern.ToLower() == "margaret thatcher" || premiarministern.ToLower() == "thatcher" || premiarministern.ToLower() == "margaret")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var Margaret Thatcher");
+                poang -= 1;
+            }
+
+            Console.WriteLine("fråga 22: Vilket år inträffade den ryska revolutionen?");
+            string ryska = Console.ReadLine();
+            if (ryska == "1917")
+            {
+                Console.WriteLine("Rätt svar!");
+
+                poang += 1;
+            }
+            else
+            {
+                Console.WriteLine("Fel svar, det var 1917");
+                poang -= 1;
+            }
+
             Console.WriteLine($"Grattis {namn}, du har fått {poang} poäng!");
-            if (poang >= 30)
+            Thread.Sleep(2000);
+            if (poang >= 30 && poang <= 40)
             {
                 Console.WriteLine("Wow, du är ett riktigt historia proffs!");
             }
@@ -609,12 +661,40 @@ while (!exit)
             Console.WriteLine("Ogiltigt val, försök igen");
             Thread.Sleep(3000);
             continue;
-    }        
+    }
 }
 
 
 
-        
+// Console.WriteLine("hello world");
+// bool go = true;
+
+// while (go == true)
+// {
+//     Console.WriteLine("Skriv ett alternativ");
+//     Console.WriteLine("A. Ett skämt");
+//     Console.WriteLine("B. En gåta");
+//     Console.WriteLine("C. Avsluta programmet");
+
+//     string val = Console.ReadLine().ToLower();
+
+//     switch (val)
+//     {
+//         case "a":
+//             Console.WriteLine("En nycklad bil kallas för cadillac");
+//             break;
+//         case "b":
+//             for (int x = 1; x <= 5; x++)
+//             {
+//                 int y = x * x + 4;
+//                 Console.WriteLine($"x: {x}\ty: {y}");
+//             }
+//             break;
+//         case "c":
+//             go = false;
+//             break;
+//        }
+// }
 
 
 
@@ -627,8 +707,8 @@ while (!exit)
 //     counter++;
 
 //     Thread.Sleep(1000);
-    
-    
+
+
 // }
 // for(int i = 60; i >= 0; i -= 1)
 //     {
