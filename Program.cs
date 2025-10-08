@@ -224,7 +224,7 @@ while (!exit)
                     Console.WriteLine("Rätt svar!");
                     Thread.Sleep(2000);
                     poang += 1;
-                    
+
                 }
                 else
                 {
@@ -263,7 +263,7 @@ while (!exit)
 
                 }
             }
-            
+
                 Console.WriteLine("fråga 6: Vilket år började första världskriget?");
                 string ar1vk = Console.ReadLine();
 
@@ -316,7 +316,7 @@ while (!exit)
                 {
                     Console.WriteLine("Rätt svar!");
                     Thread.Sleep(2000);
-                    poang += 1;                    
+                    poang += 1;
                 }
                 else
                 {
@@ -346,7 +346,7 @@ while (!exit)
                 {
                     Console.WriteLine("Rätt svar!");
                     Thread.Sleep(2000);
-                    poang += 1;                    
+                    poang += 1;
                 }
                 else
                 {
@@ -492,7 +492,7 @@ while (!exit)
                     Console.WriteLine("Fel svar, det var 1700-talet");
                     Thread.Sleep(2000);
                     poang -= 1;
-                    
+
                 }
 
                 Console.WriteLine("fråga 15: Vem var den första presidenten i USA?");
