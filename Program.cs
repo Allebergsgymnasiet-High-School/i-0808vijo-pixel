@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Diagnostics;
+using System.Threading;
 Console.WriteLine("======================================");
 Console.WriteLine("=        Frågesport! Advanced        =");
 Console.WriteLine("=        Press Enter to Start        =");
@@ -6,7 +7,7 @@ Console.WriteLine("======================================");
 Console.ReadLine();
 
 bool exit = false;
-
+Random thread = new Random();
 
     Console.WriteLine("======================================");
     Console.WriteLine("=             Main Menu:             =");
@@ -26,8 +27,35 @@ while (!exit)
     {
 
         case "start":
-            Console.WriteLine("Loading...");
-            Thread.Sleep(3000);
+            int waiting = thread.Next(4000, 35000);
+            if (waiting > 15000)
+            {
+                waiting = 15000;
+            }
+            
+             string dots = ".";
+            for (int i = 0; i < waiting; i += 1000)
+            {
+                Console.Clear();
+                if (dots.Length == 4)
+                {
+                    dots = ".";
+                }
+
+                Console.Write("Loading" + dots);
+                dots += ".";
+                Thread.Sleep(1000);
+            }
+            Console.Clear();
+            Console.WriteLine("ERR_CONNECTION_TIMED_OUT\nAnledning: Spelet tog för lång tid att svara.");
+            Thread.Sleep(5000);
+            Console.Clear();
+            if(waiting == 15000)
+            {
+                continue;
+            }
+
+
             int hintsLeft = 5;
 
             while (true)
@@ -95,7 +123,7 @@ while (!exit)
             Console.WriteLine("Du kommer att få svara på 30 frågor om ämnet historia.");
             Thread.Sleep(3000);
             Console.WriteLine("För varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!");
-            Thread.Sleep(4000);
+            Thread.Sleep(3500);
             Console.WriteLine("Har du förstått spelreglerna?");
             string regler = Console.ReadLine();
             int poang = 0;
@@ -108,7 +136,7 @@ while (!exit)
                     Console.WriteLine("Du kommer att få svara på 30 frågor om ämnet historia.");
                     Thread.Sleep(3000);
                     Console.WriteLine("För varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!");
-                    Thread.Sleep(4000);
+                    Thread.Sleep(3500);
                     Console.WriteLine("Har du förstått spelreglerna nu?");
                 }
             if (regler.ToLower() == "ja" || regler.ToLower() == "ja!")
@@ -124,7 +152,7 @@ while (!exit)
                 Console.WriteLine("Du kommer att få svara på 30 frågor om ämnet historia.");
                 Thread.Sleep(3000);
                 Console.WriteLine("För varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!");
-                Thread.Sleep(4000);
+                Thread.Sleep(3500);
                 Console.WriteLine("Har du förstått spelreglerna nu?");
                 string regler2 = Console.ReadLine();
                 if (regler2.ToLower() == "ja" || regler2.ToLower() == "ja!")
@@ -139,7 +167,7 @@ while (!exit)
                     Console.WriteLine("Du kommer att få svara på 30 frågor om ämnet historia.");
                     Thread.Sleep(3000);
                     Console.WriteLine("För varje rätt svar får du 1 poäng samt förlora en poäng för varje fel svar!");
-                    Thread.Sleep(4000);
+                    Thread.Sleep(3500);
                     Console.WriteLine("Hoppas du har förstått nu, annars får du fråga någon annan om hjälp.");
                     Thread.Sleep(3500);
                 }
