@@ -1,5 +1,10 @@
 ﻿using System.Diagnostics;
 using System.Threading;
+
+
+
+#region frågesport
+
 Console.WriteLine("======================================");
 Console.WriteLine("=        Frågesport! Advanced        =");
 Console.WriteLine("=        Press Enter to Start        =");
@@ -863,139 +868,211 @@ while (!exit)
             continue;
     }
 }
+#endregion
+
+// using System.Collections;
+
+// string entext = "hej hej";
+// char tecken = '/';
+// int heltal = 34;
+// double decimaltal = 2.6;
+// bool boolesk = true;
 
 
+// string text = Console.ReadLine();
+// char teck = text[2];
+// int tal1 = Convert.ToInt32(text);
+// double deci1 = Convert.ToDouble(Console.ReadLine());
+// bool check = tal1 > deci1;
 
-// Console.WriteLine("hello world");
-// bool go = true;
-
-// while (go == true)
+// string ord = "Jag heter Vincent";
+// string del = ord.Substring(10);
+// string delord = ord.Substring(4, 5);
+// if (delord == "heter" && del == "Vincent")
 // {
-//     Console.WriteLine("Skriv ett alternativ");
-//     Console.WriteLine("A. Ett skämt");
-//     Console.WriteLine("B. En gåta");
-//     Console.WriteLine("C. Avsluta programmet");
-
-//     string val = Console.ReadLine().ToLower();
-
-//     switch (val)
-//     {
-//         case "a":
-//             Console.WriteLine("En nycklad bil kallas för cadillac");
-//             break;
-//         case "b":
-//             for (int x = 1; x <= 5; x++)
-//             {
-//                 int y = x * x + 4;
-//                 Console.WriteLine($"x: {x}\ty: {y}");
-//             }
-//             break;
-//         case "c":
-//             go = false;
-//             break;
-//        }
-// }
-
-
-
-// using System.Threading;
-// int counter = 1;
-
-// while (counter <= 20)
-// {
-//     Console.WriteLine(counter);
-//     counter++;
-
-//     Thread.Sleep(1000);
-
-
-// }
-// for(int i = 60; i >= 0; i -= 1)
-//     {
-//         Console.WriteLine(i);
-//         Thread.Sleep(1000);
-//     }
-
-// Console.WriteLine("Välkommen!");
-
-// Console.WriteLine("Vad heter du?");
-// string name = Console.ReadLine();
-
-// Console.WriteLine($"Hej ditt namn {name}.\nSkriv ett heltal");
-
-// string inm1 = Console.ReadLine();
-// int tal1 = Convert.ToInt32(inm1);
-// // int tal1 = Convert.ToInt32(inm1);
-
-// Console.WriteLine($"Vad blir {tal1}- 5?");
-
-// int corrAns = tal1 - 5;
-
-// int talSvar = Convert.ToInt32(Console.ReadLine());
-
-// if (talSvar == corrAns)
-// {
-//     Console.WriteLine("Rätt svar!");
+//     Console.WriteLine("Du hittade rätt");
 // }
 // else
 // {
-//     Console.WriteLine("Fel svar");
+//     Console.WriteLine("Checka index igen");
 // }
 
-// Random rand = new Random();
-// int slump = rand.Next(1, 11);
-
-// Console.WriteLine("Jag tänkte på ett tal mellan 1 och 10?");
-
-// int gissning = 0;
-
-// while (gissning != slump)
+// if (ord.Contains("Hej"))
 // {
-//     gissning = Convert.ToInt32(Console.ReadLine());
-//     if (gissning == slump)
-//     {
-//         Console.WriteLine("Rätt svar!");
-//     }
-//     else
-//     {
-//         Console.WriteLine("Fel svar, gissa igen.");
-//     }
+//     Console.WriteLine("Hej finns :)");
 // }
 
 
-// Console.WriteLine("Välkommen Vincent!\nVänligen skriv in ett heltal");
-// String inm1 = Console.ReadLine();
+// bool loopen = true;
+// while (loopen == true)
+// {
+//     Random dice = new Random();
+//     int slump = dice.Next(1, 5);
 
-// Console.WriteLine("Skriv nu vänligen in ett decimaltal");
-// String inm2 = Console.ReadLine();
+//     switch (slump)
+//     {
+//         case 1:
+//             Console.WriteLine("Siffran 1");
+//             break;
 
-// Double tal1 = Convert.ToDouble(inm1);
-// Double tal2 = Convert.ToDouble(inm2);
+//         case 2:
+//             Console.WriteLine("En annan sak.");
+//             break;
 
-// Double div = tal1 / tal2;
+//         case 3:
+//             Console.WriteLine("HEJ TRE!");
+//             break;
 
-// Console.WriteLine($"{tal1} / {tal2} = {div}");
-// // Console.WriteLine("Välkommen!\nVänligen skriv ett heltal");
+//     }
+// }
+
+// string svar = "";
+
+// while (svar != "ja")
+// {
+//     Console.WriteLine("Vill du gå ur loopen?");
+//     svar = Console.ReadLine();
+// }
+
+
+// string namn = "Göteborg";
+// for (int i = 0; i < namn.Length; i++)
+// {
+//     Console.WriteLine(namn[i]);
+// }
+
+// for (int x = 10; x < 31; x += 5)
+// {
+//     int y = 3 * x - 10;
+//     Console.WriteLine($"x: {x} y: {y}");
+
+// }
+
+// string[] orden = new string[4];
+// orden[0] = "Sengångare";
+// orden[1] = "Megatherium";
+// orden[2] = "Folivora";
+// orden[3] = "Megalonyx";
+
+// for (int index = 0; index < orden.Length; index++)
+// {
+//     Console.WriteLine(orden[index]);
+// }
+
+// // Console.WriteLine("hello world");
+// // bool go = true;
+
+// // while (go == true)
+// // {
+// //     Console.WriteLine("Skriv ett alternativ");
+// //     Console.WriteLine("A. Ett skämt");
+// //     Console.WriteLine("B. En gåta");
+// //     Console.WriteLine("C. Avsluta programmet");
+
+// //     string val = Console.ReadLine().ToLower();
+
+// //     switch (val)
+// //     {
+// //         case "a":
+// //             Console.WriteLine("En nycklad bil kallas för cadillac");
+// //             break;
+// //         case "b":
+// //             for (int x = 1; x <= 5; x++)
+// //             {
+// //                 int y = x * x + 4;
+// //                 Console.WriteLine($"x: {x}\ty: {y}");
+// //             }
+// //             break;
+// //         case "c":
+// //             go = false;
+// //             break;
+// //        }
+// // }
+
+
+
+// // using System.Threading;
+// // int counter = 1;
+
+// // while (counter <= 20)
+// // {
+// //     Console.WriteLine(counter);
+// //     counter++;
+
+// //     Thread.Sleep(1000);
+
+
+// // }
+// // for(int i = 60; i >= 0; i -= 1)
+// //     {
+// //         Console.WriteLine(i);
+// //         Thread.Sleep(1000);
+// //     }
+
+// // Console.WriteLine("Välkommen!");
+
+// // Console.WriteLine("Vad heter du?");
+// // string name = Console.ReadLine();
+
+// // Console.WriteLine($"Hej ditt namn {name}.\nSkriv ett heltal");
+
 // // string inm1 = Console.ReadLine();
-
-// // Console.WriteLine ("Skriv nu ett till heltal");
-// // string inm2 = Console.ReadLine();
-
 // // int tal1 = Convert.ToInt32(inm1);
-// // int tal2 = Convert.ToInt32(inm2);
+// // // int tal1 = Convert.ToInt32(inm1);
 
-// // int summa = tal1 + tal2;
+// // Console.WriteLine($"Vad blir {tal1}- 5?");
 
-// // Console.WriteLine($"{tal1} + {tal2} = {summa}");
+// // int corrAns = tal1 - 5;
 
-// // // Double tal1 = Convert.ToDouble(inm1);
-// // // Double tal2 = Convert.ToDouble(inm2);
+// // int talSvar = Convert.ToInt32(Console.ReadLine());
 
-// // // Double div = tal1 / tal2;
-// // // Console.WriteLine("Skriv in ett heltal");
-// // // String inm1 = Console.ReadLine();
-// // // Console.WriteLine("Skriv in ett till heltal");
-// // // String inm2 = Console.ReadLine();
+// // if (talSvar == corrAns)
+// // {
+// //     Console.WriteLine("Rätt svar!");
+// // }
+// // else
+// // {
+// //     Console.WriteLine("Fel svar");
+// // }
+
+// // Random rand = new Random();
+// // int slump = rand.Next(1, 11);
+
+// // Console.WriteLine("Jag tänkte på ett tal mellan 1 och 10?");
+
+// // int gissning = 0;
+
+// // while (gissning != slump)
+// // {
+// //     gissning = Convert.ToInt32(Console.ReadLine());
+// //     if (gissning == slump)
+// //     {
+// //         Console.WriteLine("Rätt svar!");
+// //     }
+// //     else
+// //     {
+// //         Console.WriteLine("Fel svar, gissa igen.");
+// //     }
+// // }
+
+
+// // Console.WriteLine("Välkommen Vincent!\nVänligen skriv in ett heltal");
+// // String inm1 = Console.ReadLine();
+
+// // Console.WriteLine("Skriv nu vänligen in ett decimaltal");
+// // String inm2 = Console.ReadLine();
+
+// // Double tal1 = Convert.ToDouble(inm1);
+// // Double tal2 = Convert.ToDouble(inm2);
+
+// // Double div = tal1 / tal2;
+
+// // Console.WriteLine($"{tal1} / {tal2} = {div}");
+// // // Console.WriteLine("Välkommen!\nVänligen skriv ett heltal");
+// // // string inm1 = Console.ReadLine();
+
+// // // Console.WriteLine ("Skriv nu ett till heltal");
+// // // string inm2 = Console.ReadLine();
 
 // // // int tal1 = Convert.ToInt32(inm1);
 // // // int tal2 = Convert.ToInt32(inm2);
@@ -1004,43 +1081,59 @@ while (!exit)
 
 // // // Console.WriteLine($"{tal1} + {tal2} = {summa}");
 
+// // // // Double tal1 = Convert.ToDouble(inm1);
+// // // // Double tal2 = Convert.ToDouble(inm2);
 
+// // // // Double div = tal1 / tal2;
+// // // // Console.WriteLine("Skriv in ett heltal");
+// // // // String inm1 = Console.ReadLine();
+// // // // Console.WriteLine("Skriv in ett till heltal");
+// // // // String inm2 = Console.ReadLine();
 
-// // // // //skapa en int
-// // // // int tal = 5;
+// // // // int tal1 = Convert.ToInt32(inm1);
+// // // // int tal2 = Convert.ToInt32(inm2);
 
-// // // // //Fel kod
-// // // // Console.WriteLine("Hur gammal är du?");
-// // // // String tal1 = Console.ReadLine();
+// // // // int summa = tal1 + tal2;
 
-// // // // Console.WriteLine("Hur gammal är din kompis?");
-// // // // String tal2 = Console.ReadLine();
-
-
-// // // // //Rätt kod
-// // // // Console.WriteLine("Hur gammal är du på riktigt?");
-// // // // String inmatning = Console.ReadLine();
-// // // // int talKonv = Convert.ToInt32(inmatning);
-
-// // // // if (talKonv > 17)
-// // // // {
-
-// // // //     Console.WriteLine("Välkommen till krogen");
-
-// // // // }
+// // // // Console.WriteLine($"{tal1} + {tal2} = {summa}");
 
 
 
-// // // // Console.WriteLine("Välkommen!\nVad heter du?");
+// // // // // //skapa en int
+// // // // // int tal = 5;
 
-// // // // string namn = Console.ReadLine();
+// // // // // //Fel kod
+// // // // // Console.WriteLine("Hur gammal är du?");
+// // // // // String tal1 = Console.ReadLine();
 
-// // // // Console.WriteLine("Hej " + namn);
-// // // // Console.WriteLine("Vart bor du?");
-// // // // String plats = Console.ReadLine();
+// // // // // Console.WriteLine("Hur gammal är din kompis?");
+// // // // // String tal2 = Console.ReadLine();
 
-// // // // Console.WriteLine("Vad gillar du att se på Netflix?");
-// // // // String Netflix = Console.ReadLine();
 
-// // // // Console.WriteLine($"Välkommen {namn}. Jag ser att du bor i/på {plats}.\n"
-// // // // + $"ikväll tycker jag du ska kolla på {Netflix}");
+// // // // // //Rätt kod
+// // // // // Console.WriteLine("Hur gammal är du på riktigt?");
+// // // // // String inmatning = Console.ReadLine();
+// // // // // int talKonv = Convert.ToInt32(inmatning);
+
+// // // // // if (talKonv > 17)
+// // // // // {
+
+// // // // //     Console.WriteLine("Välkommen till krogen");
+
+// // // // // }
+
+
+
+// // // // // Console.WriteLine("Välkommen!\nVad heter du?");
+
+// // // // // string namn = Console.ReadLine();
+
+// // // // // Console.WriteLine("Hej " + namn);
+// // // // // Console.WriteLine("Vart bor du?");
+// // // // // String plats = Console.ReadLine();
+
+// // // // // Console.WriteLine("Vad gillar du att se på Netflix?");
+// // // // // String Netflix = Console.ReadLine();
+
+// // // // // Console.WriteLine($"Välkommen {namn}. Jag ser att du bor i/på {plats}.\n"
+// // // // // + $"ikväll tycker jag du ska kolla på {Netflix}");
